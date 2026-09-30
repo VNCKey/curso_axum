@@ -2,7 +2,7 @@ use crate::api::http::usuarios::{
     crear_usuario, editar_usuario, eliminar_usuario, listar_usuarios, obtener_usuario,
 };
 use crate::state::AppState;
-use axum::routing::{delete, get, post, put};
+use axum::routing::{get, post};
 use axum::Router;
 
 pub fn router(state: AppState) -> Router {
@@ -17,11 +17,3 @@ pub fn router(state: AppState) -> Router {
         )
         .with_state(state)
 }
-
-// let app = Router::new()
-//     .route("/", get(saludo))
-//     .route("/saludo/{nombre}", get(saludo_path))
-//     .route("/query", get(saludo_query))
-//     .route("/json", get(saludar_json))
-//     .route("/crear-usuario", post(crear_usuario))
-//     .with_state(state);
